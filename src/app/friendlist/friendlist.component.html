@@ -1,0 +1,67 @@
+<section id="headerProfile">
+    <div class="row">
+        <div class="col-12">
+
+        </div>
+    </div>
+</section>
+
+<div class="container" style="margin-top: -5rem;">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-2 profile-box">
+                <img style="width: 100%;" src="https://randomuser.me/api/portraits/women/50.jpg" />
+            </div>
+            <div class="col">
+                <div class="row" style="height: 4rem;">
+                    <div class="col-12">
+                        &nbsp;
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 profile-box" style="padding-left: 2rem;">
+                        <nav>
+                            <ul class="nav">
+                                <li class="nav-item">
+                                    <a class="nav-link active" routerLink="/profile-timeline">Timeline</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" routerLink="/profile-page">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" routerLink="/profile-friend-list">Friend</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="col-12 ">
+        <div class="row ml-auto mr-auto">
+            <div *ngFor="let data of friend" class="col-3 content-box friend-hover">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row">
+                        <div class="col">
+                            <img src="{{data.picture}}" class="post-picture-profile"/>
+                        </div>
+                        </div>
+                        <div class="row">
+                        <div class="col">
+                            <a class="link" href="#"><b>{{data.firstName}} {{data.lastName}}</b></a><br>
+                            <p>
+                                {{data.email}}
+                            </p>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,104 @@
+<section id="headerProfile">
+    <div class="row">
+        <div class="col-12">
+
+        </div>
+    </div>
+</section>
+
+<div class="container" style="margin-top: -5rem;">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-2 profile-box">
+                <img style="width: 100%;" src="https://randomuser.me/api/portraits/women/50.jpg" />
+            </div>
+            <div class="col">
+                <div class="row" style="height: 4rem;">
+                    <div class="col-12">
+                        &nbsp;
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 profile-box" style="padding-left: 2rem;">
+                        <nav>
+                            <ul class="nav">
+                                <li class="nav-item">
+                                    <a class="nav-link active" routerLink="/profile-timeline">Timeline</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" routerLink="/profile-page">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" routerLink="/profile-friend-list">Friend</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container ml-auto mr-auto">
+    <div class="col-12">
+        <div class="row ml-auto">
+            <div class="col-2">
+                <div class="col-12 content-box-profile">
+                    <b>Lilja Lampinen</b><br>
+                    <hr class="float-left" style="border: 1px solid #be2f25; width: 20%;"/><br>
+                    <p text-justify>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                        Dicta cum ipsam corporis consequatur, delectus dolores, nihil
+                        nulla vitae est fugiat quisquam commodi!
+                    </p>
+                </div>
+                <div class="col-12 content-box-profile">
+                    <b>Favorite Tags</b><br>
+                    <span *ngFor="let tag of dataTag"><a style="padding:0px 10px; border-radius: 5px; background-color:#226fff; color: #fff;">{{tag}}</a> &nbsp;</span>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="row">
+                    <div *ngFor="let myPost of dataMyPost " class="col-12 content-box-profile">
+                        <div class="row">
+                            <div class="col-1">
+                                <img src="{{myPost.owner.picture}}" class="post-picture-profile" />
+                            </div>
+                            <div class="col">
+                                <b style="font-size: medium;">{{myPost.owner.firstName}} {{myPost.owner.lastName}}</b><br>
+                                {{myPost.publishDate}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 post-text">
+                                <p>{{myPost.text}}</p>
+                                <img src="{{myPost.image}}" class="post-picture-content" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                              <i class="fa fa-heart-o" aria-hidden="true"></i> {{myPost.likes}} Likes
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="col content-box-profile">
+                    <div class="row">
+                        <div class="col-12 title-box">
+                          advertisement<br>
+                          <hr class="float-left" style="border: 1px solid #be2f25; width: 20%;"/><br>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                          <img src="https://source.unsplash.com/user/jtylernix/1600x900" style="max-width: 100%;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>

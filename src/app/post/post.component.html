@@ -1,0 +1,186 @@
+<div class="container">
+  <div class="row ml-auto content">
+
+    <div class="col-md-3">
+
+      <div class="col content-box">
+        <div class="row">
+          <div class="col title-box text-center">
+            Meet The Team<br>
+            <hr style="border: 1px solid #be2f25; width: 20%;"/><br>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col text-center">
+            
+            <a routerLink="/about-us" class="btn button-share">visit</a><br><br>
+            <p>This page about ours</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col content-box">
+        <div class="row">
+          <div class="col title-box">
+            Friend Online<br>
+            <hr class="float-left" style="border: 1px solid #be2f25; width: 20%;"/><br>
+            <!-- <button (click)="getUserFromAPI()">GET POST</button> -->
+          </div>
+        </div>
+        <div *ngFor="let userData of userData" class="col-12 ml-auto mr-auto friend-list">
+          <div class="row">
+            <div class="col-sm-3">
+              <img src="{{userData.picture}}" class="post-picture-profile" />
+            </div>
+            <div class="col-sm-9">
+              <b>{{userData.firstName}}</b><br>
+              {{userData.lastName}}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col content-box">
+        <b style=" font-size: medium;">Trending Tags</b><br>
+        <hr class="float-left" style="border: 1px solid #be2f25; width: 20%;"/><br><br>
+        <span style="margin-top:1rem" *ngFor="let tag of dataTag"><a style="padding:0px 10px; border-radius: 5px; background-color:#226fff; color: #fff;">{{tag}}</a> &nbsp;</span>
+      </div>
+
+    </div>
+
+    <div class="col-md-6">
+
+      <div class="col-12 content-box post">
+        <div class="row">
+          <div class="col-1">
+            <img src="https://randomuser.me/api/portraits/women/50.jpg" class="post-picture-profile" />
+          </div>
+          <div class="col text-right" style="margin-left: 1.5rem;">
+            <input [(ngModel)]="newSelfPost" name="newSelfPost" placeholder="   say something" class="form-control"
+              type="text" style="border-radius: 20px; font-size: small; height:2.5rem;">
+            <button style="margin-top: 0.5rem;" (click)="addSelfPost()" class="btn button-share">
+              share
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div *ngFor="let selfPost of selfPostList" class="col-12 content-box post">
+        <div class="row">
+          <div class="col-1">
+            <img src="https://randomuser.me/api/portraits/women/50.jpg" class="post-picture-profile" />
+          </div>
+          <div class="col" style="margin-left: 1.5rem;">
+            <b style="font-size: medium;">Lilja Lampinen</b><br>
+            Now
+          </div>
+          <div class="col-1">
+            <div class="btn-group dropleft">
+              <a style="cursor: pointer;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-chevron-circle-down" style="color: rgb(209, 209, 209);" aria-hidden="true"></i>
+              </a>
+              <div class="dropdown-menu text-center">
+                <li style="cursor: pointer;" (click)="deleteSelfPost(selfPost)">Delete Post</li>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 post-text">
+            <p>{{selfPost.text}} {{selfPost.id}}</p>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="col-6">
+              <i class="fa fa-heart-o" aria-hidden="true"></i> Likes
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- <button (click)="getDataFromAPI()">GET POST</button>
+      <h1>Hello Universe!</h1> -->
+
+      <div *ngFor="let data of data" class="col-12 content-box post">
+        <div class="row">
+          <div class="col-1">
+            <img src="{{data.owner.picture}}" class="post-picture-profile" />
+          </div>
+          <div class="col" style="margin-left: 1.5rem;">
+            <b style="font-size: medium;">{{data.owner.firstName}} {{data.owner.lastName}}</b><br>
+            {{data.publishDate}}
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12 post-text">
+            <p>{{data.text}}</p>
+            <img src="{{data.image}}" class="post-picture-content" />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12">
+            <i class="fa fa-heart-o" aria-hidden="true"></i> {{data.likes}} Likes
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="col-md-3">
+
+      <div class="col-12 content-box">
+
+        <div class="row">
+          <div class="col-12 title-box">
+            Recent Notification<br>
+            <hr class="float-left" style="border: 1px solid #be2f25; width: 20%;"/><br>
+            <!-- <button (click)="getCommentFromAPI()">GET POST</button> -->
+          </div>
+        </div>
+
+        <div *ngFor="let notif of userComment" class="col-12 ml-auto friend-list">
+          <div class="row">
+            <div class="col-3">
+              <img src="{{notif.owner.picture}}" class="post-picture-profile" />
+            </div>
+            <div class="col-9">
+              <div class="row">
+                <div class="col">
+                  <b>{{notif.owner.firstName}} {{notif.owner.lastName}}</b> commented : <br>
+                  {{notif.message}}
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  {{notif.publishDate}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-12 content-box">
+        <div class="row">
+          <div class="col-12 title-box">
+            advertisement<br>
+            <hr class="float-left" style="border: 1px solid #be2f25; width: 20%;"/><br>
+          </div>
+        </div>
+          <div class="row">
+            <div class="col-12">
+              <img src="https://source.unsplash.com/user/jtylernix/1600x900" style="max-width: 100%;">
+            </div>
+          </div>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,73 @@
+
+#landingAbout { 
+    
+    display: table;
+    width: 100%;
+    max-width: 100%;
+    height: 60%;
+    text-align: center;
+    background:linear-gradient(
+        rgba(0, 0, 0, 0.2), 
+        rgba(0, 0, 0, 0.2)
+      ),
+      url("https://source.unsplash.com/cqbLg3lZEpk/1920x1280");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-position: fixed;
+    background-size: cover;
+}
+
+.col-landing {
+    vertical-align: middle;
+    height: 100%;
+    padding-top: 200px;
+    margin:0;
+}
+
+.title-landing{
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #fff;
+}
+
+#meetTheTeam{
+    padding-top: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 5rem;
+}
+
+.team-box {
+    background-color: #fff;
+}
+
+.container {
+    width: 70%;
+}
+
+.meet-title{
+    margin-top: 2rem;
+}
+
+.card-team {
+    background-color: #fff;
+    padding: 1rem;
+}
+
+.scaleOne{
+    transform: scale(1.1,1.1);
+    background-color: rgb(214, 104, 31);
+    color: #fff;
+}
+
+.title-footer{
+    padding:1rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+#footer-landing{
+    color: #fff;
+    background-color: #0f0b07;
+    padding: 3rem;
+}
